@@ -36,7 +36,6 @@ def update_dns_records(current_ip):
             "name": result_data[i]["name"],
             "type": result_data[i]["type"],
         }
-        print(record)
         dns_record_list.append(record)
     for record in dns_record_list:
         if record["type"] == "CNAME" or record["type"] == "SRV":
