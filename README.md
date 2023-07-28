@@ -1,6 +1,6 @@
-# Dynamic DNS Update Script
+# Dynamic DNS Update Script - Cloudflare
 
-My ISP changes my IP-address at random intervals. This can get annoying when hosting a services open to the internet. To combat this I have registered a domain with Cloudflare and written this script that makes a request to icanhazip.com to check what the current IP address is. If it is different than last time the script was run it updates all the DNS records programatically through the Cloudflare API. First, it makes a GET request to fetch all of the DNS records and then sends a PATCH request to update all but the CNAME and SRV ones. The script logs to a file named 'dns_update_log' and rolls over to a new file every midnight. Logs are kept for 7 days. 
+My ISP changes my IP-address at random intervals. This can get annoying when hosting services open to the internet. To combat this I have registered a domain with Cloudflare and written this script that makes a request to icanhazip.com to check what the current IP address is. If it is different than last time the script was run it updates all the DNS records programatically through the Cloudflare API. First, it makes a GET request to fetch all of the DNS records and then sends a PATCH request to update all but the CNAME and SRV ones. The script logs to a file named 'dns_update_log' and rolls over to a new file every midnight. Logs are kept for 7 days. 
 
 If you wish to use this script: 
 
